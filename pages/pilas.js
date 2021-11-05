@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import styles from "../styles/Home.module.css";
+import Link from "next/link";
 
 const Pilas = () => {
   const [stack, setStack] = useState([]);
@@ -26,9 +27,12 @@ const Pilas = () => {
     <div className={styles.grid}>
       {encabezado}
       <div className={styles.grid}>
-        <a href="/" className={styles.card}>
-          <h2>Home</h2>
-        </a>
+        <div className={styles.card}>
+          <Link href="/" className={styles.card}>
+            <h2>Home</h2>
+          </Link>
+        </div>
+
         <button className={styles.card} onClick={handleAdd}>
           Agregar elemento
         </button>

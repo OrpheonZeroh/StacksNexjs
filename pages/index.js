@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
+import Link from 'next/link'
 
 export default function Home() {
   return (
@@ -20,10 +21,10 @@ export default function Home() {
           Elija una estructura de Datos
         </p>
 
-        <div className={styles.grid}>
-          <a href="/pilas" className={styles.card}>
+        <div className={styles.card}>
+          <Link href="/pilas">
             <h2>Pilas &rarr;</h2>
-             </a>
+          </Link>
         </div>
       </main>
 
