@@ -16,6 +16,10 @@ export default function Home() {
         <h1 className={styles.title}>
           Proyecto de Estructura de Datos
         </h1>
+        <li>Jonathan Adamson 8-875-373</li>
+        <li>Alvan Samudio 4-807-1931</li>
+        <li>Juan Taylor 8-971-255</li>
+        <li>jeremy Chacon 20-70-4741</li>
 
         <p className={styles.description}>
           Elija una estructura de Datos
