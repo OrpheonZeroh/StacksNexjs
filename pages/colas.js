@@ -2,27 +2,32 @@ import { useState, useEffect } from "react";
 import styles from "../styles/Home.module.css";
 import Link from "next/link";
 
-const Pilas = () => {
-  const [stack, setStack] = useState([]);
-  const [cima, setCima] = useState(stack);
+const Colas = () => {
+  const [queue, setQueue] = useState([]);
+  const [init, setInit] = useState(queue);
+  const [end, setEnd] = useState(queue);
 
   const handleAdd = () => {
-    setStack([...stack, Math.floor(Math.random() * 99)]);
+    setQueue([Math.floor(Math.random() * 99), ...queue]);
   };
 
   const handleRemove = () => {
-    setStack(stack.slice(0, stack.length - 1, ...stack));
+    setQueue(queue.slice(0, queue.length - 1, ...queue));
+  };
+
+  const getFirstElement = () => {
+    setInit(queue[0]);
   };
 
   const getLastElement = () => {
-    setCima(stack.slice(-1)[0]);
-    console.log(stack);
+    setEnd(queue.slice(-1)[0]);
   };
 
   useEffect(() => {
+    getFirstElement();
     getLastElement();
   });
-  const encabezado = <h1>Estructura de datos Pilas</h1>;
+  const encabezado = <h1>Estructura de datos Colas</h1>;
   return (
     <div className={styles.grid}>
       {encabezado}
@@ -32,6 +37,7 @@ const Pilas = () => {
             <h2>Home</h2>
           </Link>
         </div>
+
         <button className={styles.card} onClick={handleAdd}>
           Agregar elemento
         </button>
@@ -39,10 +45,11 @@ const Pilas = () => {
           Retirar elemento
         </button>
       </div>
-      <h4>valor de cima = {cima}</h4>
+      <h4>valor de inicio = {init}</h4>
+      <h4>valor de final = {end}</h4>
       <ul>
         <div>
-          {stack.map((s, i) => (
+          {queue.map((s, i) => (
             <li key={i}>
               indice: {i}, valor: {s}
             </li>
@@ -53,4 +60,4 @@ const Pilas = () => {
   );
 };
 
-export default Pilas;
+export default Colas;

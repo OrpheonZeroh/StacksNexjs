@@ -19,7 +19,7 @@ export default function Home() {
         <li>Jonathan Adamson 8-875-373</li>
         <li>Alvan Samudio 4-807-1931</li>
         <li>Juan Taylor 8-971-255</li>
-        <li>jeremy Chacon 20-70-4741</li>
+        <li>Jeremy Chacon 20-70-4741</li>
 
         <p className={styles.description}>
           Elija una estructura de Datos
@@ -30,6 +30,11 @@ export default function Home() {
             <h2>Pilas &rarr;</h2>
           </Link>
         </div>
+        <div className={styles.card}>
+          <Link href="/colas">
+            <h2>Colas &rarr;</h2>
+          </Link>
+        </div>
       </main>
 
       <footer className={styles.footer}>
@@ -38,7 +43,7 @@ export default function Home() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Powered by{' '}
+          Powered by UTP
           <span className={styles.logo}>
             <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
           </span>
